@@ -6,7 +6,11 @@ export class MovieTicket {
         public isPremium: boolean,
         public seatRow: number,
         public seatNr: number
-      ) {}
+      ) {
+        if (seatRow < 0 || seatNr < 0) {
+            throw new Error("Seat row and seat number must be non-negative");
+          }
+      }
     
     public isPremiumTicket(): boolean {
         return this.isPremium;

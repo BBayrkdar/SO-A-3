@@ -11,6 +11,9 @@ export class Order {
   }
 
   public addSeatReservation(ticket: MovieTicket): void {
+    if (!ticket) {
+      throw new Error("Cannot add a null or undefined ticket to the order.");
+    }
     this.tickets.push(ticket);
   }
 
@@ -36,6 +39,10 @@ export class Order {
   }
 
   public export(exportFormat: TicketExportFormat): string {
+    if (exportFormat !== TicketExportFormat.JSON && exportFormat !== TicketExportFormat.PLAINTEXT) {
+      throw new Error(`Invalid export format: ${exportFormat}`);
+    }
+
     if (exportFormat === TicketExportFormat.JSON) {
       return JSON.stringify(
         {
