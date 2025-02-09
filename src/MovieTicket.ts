@@ -12,8 +12,8 @@ export class MovieTicket {
         return this.isPremium;
     }
     
-    public getPrice(): number {
-        return this.screening.getPricePerSeat() + (this.isPremium ? 3 : 0);
+    public getPrice(isStudentOrder: boolean): number {
+        return this.screening.getPricePerSeat() + (this.isPremium ? (isStudentOrder ? 2 : 3) : 0);
     }
     
     public toString(): string {

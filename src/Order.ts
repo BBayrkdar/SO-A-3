@@ -14,12 +14,12 @@ export class Order {
     this.tickets.push(ticket);
   }
 
-  calculatePrice(): number {
+  public calculatePrice(): number {
     let total = 0;
     let ticketCount = this.tickets.length;
 
     this.tickets.forEach((ticket, index) => {
-      let price = ticket.getPrice();
+      let price = ticket.getPrice(this.isStudentOrder);
 
       if (this.isStudentOrder || ticket.screening.dateAndTime.getDay() < 5) {
         if (index % 2 !== 0) price = 0; // Elke 2e ticket gratis
