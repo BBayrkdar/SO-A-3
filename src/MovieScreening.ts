@@ -3,9 +3,9 @@ import { Movie } from "./Movie";
 export class MovieScreening {
 
     constructor(public movie: Movie, public dateAndTime: Date, public pricePerSeat: number) {
-        this.movie = movie;
-        this.dateAndTime = dateAndTime;
-        this.pricePerSeat = pricePerSeat;
+        if (pricePerSeat < 0) {
+            throw new Error("Price per seat cannot be negative");
+          }
     }
 
     public getPricePerSeat(): number {

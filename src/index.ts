@@ -4,23 +4,23 @@ import { MovieTicket } from "./MovieTicket";
 import { Order } from "./Order";
 import { TicketExportFormat } from "./TicketExportFormat";
 
-const dune = new Movie("Dune");
+const punisher = new Movie("The Punisher");
 const oppenheimer = new Movie("Oppenheimer");
 const interstellar = new Movie("Interstellar");
 const inception = new Movie("Inception");
 
-const screeningDuneWeekday = new MovieScreening(dune, new Date(2025, 1, 8, 20, 0), 10); // Woensdag
+const screeningPunisherWeekday = new MovieScreening(punisher, new Date(2025, 1, 8, 20, 0), 10); // Woensdag
 const screeningOppenheimerWeekend = new MovieScreening(oppenheimer, new Date(2025, 1, 10, 21, 0), 12); // Vrijdag
 const screeningInterstellarWeekday = new MovieScreening(interstellar, new Date(2025, 1, 6, 19, 0), 11); // Maandag
 const screeningInceptionWeekend = new MovieScreening(inception, new Date(2025, 1, 9, 22, 30), 14); // Donderdag
 
-dune.addScreening(screeningDuneWeekday);
+punisher.addScreening(screeningPunisherWeekday);
 oppenheimer.addScreening(screeningOppenheimerWeekend);
 interstellar.addScreening(screeningInterstellarWeekday);
 inception.addScreening(screeningInceptionWeekend);
 
-const ticket1 = new MovieTicket(screeningDuneWeekday, false, 5, 12);
-const ticket2 = new MovieTicket(screeningDuneWeekday, true, 5, 13);
+const ticket1 = new MovieTicket(screeningPunisherWeekday, false, 5, 12);
+const ticket2 = new MovieTicket(screeningPunisherWeekday, true, 5, 13);
 const ticket3 = new MovieTicket(screeningOppenheimerWeekend, false, 6, 8);
 const ticket4 = new MovieTicket(screeningOppenheimerWeekend, false, 6, 9);
 const ticket5 = new MovieTicket(screeningInterstellarWeekday, true, 7, 15);
