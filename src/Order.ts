@@ -43,7 +43,7 @@ export class Order {
           tickets: this.tickets.map((t) => ({
             movie: t.screening.movie.title,
             date: t.screening.dateAndTime.toLocaleString(),
-            price: t.getPrice(),
+            price: t.getPrice(this.isStudentOrder),
             seatRow: t.seatRow,
             seatNr: t.seatNr,
             premium: t.isPremium,
